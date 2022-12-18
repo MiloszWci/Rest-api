@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('people/Wcislinski/305421', [PeopleController::class, 'index']);
-Route::get('people/Wcislinski/305421/{id}', [PeopleController::class, 'show']);
+Route::get('people/Wcislinski/305421/{people}', [PeopleController::class, 'show']);
 Route::put('people/Wcislinski/305421/{people}', [PeopleController::class, 'update']);
 Route::delete('people/Wcislinski/305421', [PeopleController::class, 'destroy']);
 Route::get('people/Wcislinski/305421', [PeopleController::class, 'create']);

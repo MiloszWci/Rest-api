@@ -11,67 +11,31 @@ class PeopleController extends Controller
    
     public function index()
     {
-        return People::all();
+        return response()->json(Article::all(), 200);
     }
 
     public function create()
     {
-        
+        return response->(View::make('people.create'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\People  $people
-     * @return \Illuminate\Http\Response
-     */
     public function show(People $people)
     {
-        return People::find($id);
+        return response()->json($article, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\People  $people
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function edit(People $people)
     {
-        //
+        $people = people::find($id);
+
+        return response()->json(View::make('people.edit')->with('people', $people));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\People  $people
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, People $people)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\People  $people
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function destroy(People $people)
     {
-        //
+        $people = people::find($id);
+        $people -> delete();
     }
 }
