@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->integer('phone_number');
-            $table->string('street');
-            $table->string('city');
+            $table->text('street');
+            $table->text('city');
             $table->timestamps();
         });
     }
