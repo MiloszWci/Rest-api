@@ -13,7 +13,7 @@ class PeoplePostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class PeoplePostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "name" => required|max:15,
+            "surname" => required|max:15,
+            "phone_number" => required|max:15,
+            "street" => required|max:15,
+            "city" => required|max:15,
         ];
     }
 }

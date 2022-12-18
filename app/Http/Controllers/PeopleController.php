@@ -2,29 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Request\PeoplePostRequest;
 use App\Models\People;
 use Illuminate\Http\Request;
 
 class PeopleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        return People::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -46,7 +38,7 @@ class PeopleController extends Controller
      */
     public function show(People $people)
     {
-        //
+        return People::find($id);
     }
 
     /**
