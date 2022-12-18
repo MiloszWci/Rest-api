@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route:get('people/Wcislinski/305421', [PeopleControler::class, 'index']);
+Route:get('people/Wcislinski/305421/{people}', [PeopleControler::class, 'show']);
+Route:put('people/Wcislinski/305421/{people}', [PeopleControler::class, 'update']);
+Route:delete('people/Wcislinski/305421', [PeopleControler::class, 'destroy']);
+Route:get('people/Wcislinski/305421', [PeopleControler::class, 'create']);
